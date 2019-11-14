@@ -80,7 +80,7 @@ open class TabPageViewController: UIPageViewController {
 
 public extension TabPageViewController {
 
-    func displayControllerWithIndex(_ index: Int, direction: UIPageViewController.NavigationDirection, animated: Bool) {
+    func displayControllerWithIndex(_ index: Int, direction: UIPageViewController.NavigationDirection, animated: Bool, shouldScroll: Bool = false) {
 
         beforeIndex = index
         shouldScrollCurrentBar = false
@@ -98,7 +98,7 @@ public extension TabPageViewController {
             completion: completion)
 
         guard isViewLoaded else { return }
-        tabView.updateCurrentIndex(index, shouldScroll: false)
+        tabView.updateCurrentIndex(index, shouldScroll: shouldScroll)
     }
 }
 
