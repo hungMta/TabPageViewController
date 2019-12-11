@@ -81,7 +81,9 @@ open class TabPageViewController: UIPageViewController {
 public extension TabPageViewController {
 
     func displayControllerWithIndex(_ index: Int, direction: UIPageViewController.NavigationDirection, animated: Bool, shouldScroll: Bool = false) {
-        view.isUserInteractionEnabled = false
+        if index != currentIndex {
+            view.isUserInteractionEnabled = false
+        }
         beforeIndex = index
         shouldScrollCurrentBar = false
         let nextViewControllers: [UIViewController] = [tabItems[index].viewController]
