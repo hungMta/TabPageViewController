@@ -102,7 +102,7 @@ public extension TabPageViewController {
         
         guard isViewLoaded else { return }
         tabView.updateCurrentIndex(index, shouldScroll: shouldScroll)
-        NotificationCenter.default.post(name: NSNotification.Name("postFromTabPageViewController"), object: pendingViewControllers[0])
+        NotificationCenter.default.post(name: NSNotification.Name("postFromTabPageViewController"), object: nextViewControllers[0])
     }
 }
 
